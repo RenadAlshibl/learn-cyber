@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cyber Tips & Basics</title>
+  <title>Cyber Tips & Fields</title>
   <style>
     :root { 
       --bg1:#08060b; --bg2:#130a22; --bg3:#210f3c; 
@@ -22,7 +22,7 @@
       padding:40px 30px; backdrop-filter: blur(8px); text-align:center;
       box-shadow:0 20px 50px rgba(0,0,0,.6), 0 0 80px 14px #7f49ff12 inset;
     }
-    h1{ margin:0 0 8px 0; font-size:26px; letter-spacing:.3px; text-shadow:0 0 12px var(--glow), 0 0 26px #b1f1ff40; }
+    h1{ margin:0 0 8px 0; font-size:28px; letter-spacing:.5px; text-shadow:0 0 16px var(--glow), 0 0 26px #b1f1ff40; }
     .meta{ font-size:13px; color:var(--muted); margin-top:14px; }
     .fact{ font-size:22px; line-height:1.9; margin:18px 0 0; min-height:104px; opacity:1;
       transition:opacity .55s ease, transform .55s ease; text-align:center; direction:rtl; unicode-bidi:plaintext; text-shadow:0 0 12px #ffffff1f; }
@@ -34,28 +34,29 @@
     footer {
       margin-top: 40px;
       font-size: 14px;
-      color: #c6a3ff;
+      color: #cbb8ff;
       opacity: 0.9;
-      text-shadow: 0 0 12px #b689ff80;
-      animation: glow 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 12px #b689ff60;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px #b689ff40; opacity: 0.8; }
-      to { text-shadow: 0 0 18px #d8b3ffb3; opacity: 1; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media(max-width:520px){ .card{padding:30px 18px} .fact{font-size:19px; min-height:92px} h1{font-size:22px} }
+    @media(max-width:520px){ .card{padding:30px 18px} .fact{font-size:19px; min-height:92px} h1{font-size:24px} }
   </style>
 </head>
 <body>
   <div class="card" role="main" aria-live="polite">
-    <h1>Cyber Tips & Basics</h1>
+    <h1>Cyber Tips & Fields</h1>
     <div id="badge" class="badge badge-tips">💡 Cyber Tips</div>
     <p id="fact" class="fact">Loading…</p>
     <div class="meta">يتجدد المحتوى تلقائيًا كل <strong>10 ثوانٍ</strong></div>
   </div>
 
-  <footer>Made with 💜 by <strong>Renad Alshibl</strong></footer>
+  <footer>Developed by <strong>Renad Alshibl © 2025</strong></footer>
 
   <script>
     function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
@@ -138,6 +139,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
