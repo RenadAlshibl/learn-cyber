@@ -6,75 +6,48 @@
   <title>Cyber Tips & Basics</title>
   <style>
     :root{
-      --bg1:#071a3a;
-      --bg2:#045a64;
-      --card:#ffffff08;
-      --text:#e8f3ff;
-      --muted:#b7c8decc;
-      --glow-blue:#4cc9f080;
-      --glow-teal:#22d1b880;
-      --badge-blue:#193a66;
-      --badge-purple:#3a1f5f;
+      --bg1:#0b0b12; --bg2:#1b1230; --bg3:#2b124a;
+      --card:#ffffff0a; --text:#e9f1ff; --muted:#c0c9dacc; --glow:#ffffffc9;
     }
     body{
       font-family:"Segoe UI",Tahoma,Arial,sans-serif;
       display:flex;align-items:center;justify-content:center;
       min-height:100vh;margin:0;padding:24px;box-sizing:border-box;
-      background:radial-gradient(1200px 900px at 20% -10%, #0a2b5a 0%, transparent 60%),
-                 radial-gradient(1200px 900px at 120% 120%, #055a61 0%, transparent 55%),
-                 linear-gradient(160deg,var(--bg1),var(--bg2));
+      background:
+        radial-gradient(900px 700px at 15% -10%, #3a1a66 0%, transparent 60%),
+        radial-gradient(900px 700px at 120% 120%, #4a1a78 0%, transparent 55%),
+        linear-gradient(160deg,var(--bg1),var(--bg2) 55%, var(--bg3));
       color:var(--text);
     }
     .card{
-      width:min(860px,96%);
-      background:var(--card);
-      border:1px solid #ffffff10;
-      border-radius:18px;
-      padding:38px 28px;
-      backdrop-filter: blur(8px);
-      box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 80px 10px #0ff2ff10 inset;
+      width:min(880px,96%); background:var(--card); border:1px solid #ffffff14;
+      border-radius:20px; padding:40px 30px; backdrop-filter:blur(8px);
+      box-shadow:0 20px 50px rgba(0,0,0,.6), 0 0 80px 14px #7f49ff12 inset;
       text-align:center;
     }
-    h1{
-      margin:0 0 6px 0;
-      font-size:24px; letter-spacing:.3px;
-      text-shadow:0 0 10px var(--glow-blue),0 0 18px var(--glow-teal);
-    }
-    .meta{font-size:13px;color:var(--muted);margin-top:12px}
+    h1{margin:0 0 8px 0;font-size:26px;letter-spacing:.3px;
+       text-shadow:0 0 12px var(--glow),0 0 26px #b1f1ff40;}
+    .meta{font-size:13px;color:var(--muted);margin-top:14px}
     .fact{
-      font-size:22px; line-height:1.8;
-      margin:18px 0 0;
-      min-height:100px;
-      transition:opacity .55s ease, transform .55s ease;
-      opacity:1; text-align:center;
-      direction:rtl; unicode-bidi:plaintext;
-      text-shadow:0 0 12px #00e1ff26;
+      font-size:22px;line-height:1.9;margin:18px 0 0;min-height:104px;
+      transition:opacity .55s ease,transform .55s ease;
+      opacity:1;text-align:center;direction:rtl;unicode-bidi:plaintext;
+      text-shadow:0 0 12px #ffffff1f;
     }
-    .fade-out{opacity:0; transform:translateY(-6px)}
+    .fade-out{opacity:0;transform:translateY(-6px)}
     .badge{
-      display:inline-block;
-      font-size:12px; padding:6px 10px;
-      border-radius:999px; margin-bottom:10px;
-      opacity:.95; direction:ltr; letter-spacing:.3px;
-      border:1px solid #ffffff22;
+      display:inline-block;font-size:12px;padding:6px 12px;border-radius:999px;
+      margin-bottom:12px;direction:ltr;border:1px solid #ffffff25;opacity:.96;
     }
     .badge-tips{
-      background:linear-gradient(180deg,#0c2a4f,#0a305a);
-      color:#cfeaff;
-      box-shadow:0 0 16px 2px var(--glow-blue), 0 2px 6px rgba(0,0,0,.4);
+      background:linear-gradient(180deg,#0f2748,#173a66);color:#d8ecff;
+      box-shadow:0 0 16px 2px #69d6ff66,0 2px 6px rgba(0,0,0,.4);
     }
     .badge-fields{
-      background:linear-gradient(180deg,#1d0f38,#25134a);
-      color:#efd8ff;
-      box-shadow:0 0 16px 2px var(--glow-teal), 0 2px 6px rgba(0,0,0,.4);
+      background:linear-gradient(180deg,#240d3e,#331657);color:#efd8ff;
+      box-shadow:0 0 16px 2px #c28bff66,0 2px 6px rgba(0,0,0,.4);
     }
-    @media(max-width:520px){
-      .card{padding:30px 18px}
-      .fact{font-size:19px;min-height:90px}
-      h1{font-size:20px}
-    }
+    @media(max-width:520px){.card{padding:30px 18px}.fact{font-size:19px;min-height:92px}h1{font-size:22px}}
   </style>
 </head>
 <body>
@@ -82,78 +55,68 @@
     <h1>Cyber Tips & Basics</h1>
     <div id="badge" class="badge badge-tips">💡 Cyber Tips</div>
     <p id="fact" class="fact">Loading…</p>
-    <div class="meta">يتجدد المحتوى تلقائيًا كل <strong>10 ثوانٍ</strong>.</div>
+    <div class="meta">يتجدد المحتوى تلقائيًا كل <strong>10 ثوانٍ</strong></div>
   </div>
 
   <script>
-    const items = [
-      {type:'tips',text:"استخدم كلمات مرور قوية وطويلة تحتوي على أرقام ورموز."},
-      {type:'tips',text:"فعّل التحقق بخطوتين لحماية حساباتك من الاختراق."},
-      {type:'tips',text:"احذر من الروابط في الرسائل العاجلة أو غير المتوقعة."},
-      {type:'tips',text:"حدّث نظام التشغيل والتطبيقات بشكل منتظم."},
-      {type:'tips',text:"استخدم VPN عند الاتصال بشبكات Wi-Fi عامة."},
-      {type:'tips',text:"لا تشارك رموز التحقق المؤقتة مع أي شخص."},
-      {type:'tips',text:"خذ نسخًا احتياطية لملفاتك المهمة بانتظام."},
-      {type:'tips',text:"تحقق من https قبل إدخال معلوماتك الشخصية."},
-      {type:'tips',text:"راجع صلاحيات التطبيقات واحذف غير الضروري."},
-      {type:'tips',text:"استخدم مدير كلمات مرور موثوق."},
-      {type:'tips',text:"قلّل مشاركة بياناتك على شبكات التواصل."},
-      {type:'tips',text:"لا تفتح مرفقات من مصادر مجهولة."},
-      {type:'tips',text:"فعّل إشعارات البنك وتابع أي نشاط غير معتاد."},
-      {type:'tips',text:"استخدم بريدًا مختلفًا لحساباتك الأكثر أهمية."},
-      {type:'tips',text:"علّم الأطفال أساسيات الخصوصية والآمان."},
+    function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));}
+    function wrapLatin(s){return s.replace(/([A-Za-z][A-Za-z0-9+\-./#\s]*[A-Za-z0-9])/g,'<bdi dir="ltr">$1</bdi>');}
+    function fmt(s){return wrapLatin(escapeHTML(s));}
 
-      {type:'fields',text:"🔐 Cybersecurity: حماية الأنظمة والبيانات من الهجمات الرقمية."},
-      {type:'fields',text:"🔐 SOC: فريق يراقب التهديدات ويستجيب للحوادث على مدار الساعة."},
-      {type:'fields',text:"🔐 GRC: سياسات وتنظيم ومخاطر لضمان التزام المؤسسة بالمعايير."},
-      {type:'fields',text:"🔐 Blue Team: الدفاع والمراقبة وتحليل التنبيهات."},
-      {type:'fields',text:"🔐 Red Team: محاكاة المهاجمين لاختبار قوة الحماية."},
-      {type:'fields',text:"🔐 Penetration Testing: اكتشاف الثغرات قبل استغلالها."},
-      {type:'fields',text:"🔐 DFIR: تحليل جنائي رقمي واستجابة للحوادث لمعرفة ماذا وكيف حدث."},
-      {type:'fields',text:"🔐 Security Architecture: تصميم بنية آمنة للشبكات والأنظمة."},
-      {type:'fields',text:"🔐 Cloud Security: حماية البيانات في خدمات مثل AWS وAzure."},
-      {type:'fields',text:"🔐 IAM: إدارة الهوية والصلاحيات وفق مبدأ أقل امتياز."},
-      {type:'fields',text:"🔐 SIEM: جمع سجلّات الأنظمة وتحليلها لاكتشاف السلوك المشبوه."},
-      {type:'fields',text:"🔐 Vulnerability Management: اكتشاف وتصنيف ومعالجة الثغرات."},
-      {type:'fields',text:"🔐 DevSecOps: دمج الأمن داخل دورة تطوير البرمجيات تلقائيًا."},
-      {type:'fields',text:"🔐 Threat Intelligence: معلومات عن المهاجمين وأساليبهم المتوقعة."},
-      {type:'fields',text:"🔐 AppSec: تأمين تطبيقات الويب والموبايل عبر فحوصات واختبارات متعددة."}
+    const items = [
+      // 20 Cyber Tips (بدون نقطة نهائية)
+      {type:'tips',text:"استخدم كلمات مرور قوية وطويلة وتجنّب تكرارها بين الحسابات"},
+      {type:'tips',text:"فعّل التحقق بخطوتين لكل حساب مهم"},
+      {type:'tips',text:"تأكّد من https قبل إدخال أي بيانات شخصية"},
+      {type:'tips',text:"تجنّب الضغط على روابط غير متوقعة في البريد أو الرسائل"},
+      {type:'tips',text:"حدّث نظامك وتطبيقاتك بانتظام لإغلاق الثغرات"},
+      {type:'tips',text:"في الشبكات العامة استخدم <bdi dir=\"ltr\">VPN</bdi> أو تجنّب إدخال بيانات حساسة"},
+      {type:'tips',text:"لا تشارك رموز التحقق المؤقتة <bdi dir=\"ltr\">OTP</bdi> مع أي شخص"},
+      {type:'tips',text:"استخدم مدير كلمات مرور موثوق لإنشاء وتخزين كلمات قوية"},
+      {type:'tips',text:"خذ نسخًا احتياطية دورية لملفاتك المهمة"},
+      {type:'tips',text:"راجِع صلاحيات التطبيقات واحذف ما لا تحتاجه"},
+      {type:'tips',text:"راقِب إشعارات البنك والبريد لأي نشاط مريب"},
+      {type:'tips',text:"قلّل مشاركة بياناتك على شبكات التواصل"},
+      {type:'tips',text:"لا تفتح مرفقات من مرسلين مجهولين"},
+      {type:'tips',text:"ثبّت التطبيقات من المتاجر الرسمية فقط"},
+      {type:'tips',text:"استخدم بريدًا مختلفًا لخدماتك الحساسة"},
+      {type:'tips',text:"فعّل قفل الشاشة والبصمة وتشفير الجهاز"},
+      {type:'tips',text:"تحقّق من عنوان المرسل قبل الرد على الرسائل"},
+      {type:'tips',text:"أوقف البلوتوث والمشاركة التلقائية عندما لا تحتاجها"},
+      {type:'tips',text:"احذف الحسابات والملفات التي لم تعد تستخدمها"},
+      {type:'tips',text:"قبل بيع الجهاز سجّل خروج ثم نفّذ تهيئة كاملة"},
+      // 10 Cyber Fields
+      {type:'fields',text:"🔐 Cybersecurity: حماية الأنظمة والبيانات من الهجمات الرقمية"},
+      {type:'fields',text:"🔐 SOC: مراقبة التهديدات والاستجابة للحوادث على مدار الساعة"},
+      {type:'fields',text:"🔐 GRC: سياسات وحوكمة وإدارة مخاطر لضمان الالتزام"},
+      {type:'fields',text:"🔐 Blue Team: الدفاع والمراقبة وتحليل التنبيهات"},
+      {type:'fields',text:"🔐 Red Team: محاكاة المهاجمين لاختبار الدفاعات عمليًا"},
+      {type:'fields',text:"🔐 Penetration Testing: اختبار اختراق للكشف المبكّر عن الثغرات"},
+      {type:'fields',text:"🔐 DFIR: تحليل جنائي رقمي واستجابة للحوادث لمعرفة ما حدث"},
+      {type:'fields',text:"🔐 Security Architecture: تصميم شبكات وأنظمة بمتطلبات أمان واضحة"},
+      {type:'fields',text:"🔐 Cloud Security: حماية البيانات في خدمات مثل <bdi dir=\"ltr\">AWS</bdi> و<bdi dir=\"ltr\">Azure</bdi>"},
+      {type:'fields',text:"🔐 AppSec: تأمين تطبيقات الويب والموبايل عبر فحوصات واختبارات متعددة"}
     ];
 
     const factEl = document.getElementById('fact');
     const badgeEl = document.getElementById('badge');
     let currentIndex = -1;
 
-    function fixRtlPunctuation(str){
-      return str.replace(/([A-Za-z0-9\)])([\.!،,:؛؟]?)\s*$/u,'$1\u200F$2');
-    }
-    function pickNewIndex(){
-      if(items.length===1) return 0;
-      let i; do{ i=Math.floor(Math.random()*items.length) }while(i===currentIndex);
-      return i;
-    }
+    function pickNewIndex(){let i; do{ i=Math.floor(Math.random()*items.length) }while(i===currentIndex); return i;}
     function renderItem(item){
-      if(item.type==='tips'){
-        badgeEl.textContent='💡 Cyber Tips';
-        badgeEl.className='badge badge-tips';
-      }else{
-        badgeEl.textContent='🔐 Cyber Fields';
-        badgeEl.className='badge badge-fields';
-      }
-      factEl.textContent=fixRtlPunctuation(item.text);
+      if(item.type==='tips'){ badgeEl.textContent='💡 Cyber Tips'; badgeEl.className='badge badge-tips'; }
+      else{ badgeEl.textContent='🔐 Cyber Fields'; badgeEl.className='badge badge-fields'; }
+      factEl.innerHTML = fmt(item.text);
     }
     function showRandom(){
       const next=pickNewIndex(); currentIndex=next;
       factEl.classList.add('fade-out'); badgeEl.classList.add('fade-out');
-      setTimeout(()=>{
-        renderItem(items[currentIndex]);
-        factEl.classList.remove('fade-out'); badgeEl.classList.remove('fade-out');
-      },550);
+      setTimeout(()=>{ renderItem(items[currentIndex]); factEl.classList.remove('fade-out'); badgeEl.classList.remove('fade-out'); },550);
     }
-    renderItem(items[0]);
-    setTimeout(showRandom,200);
-    setInterval(showRandom,10000);
+    renderItem(items[0]); setTimeout(showRandom,200); setInterval(showRandom,10000);
   </script>
 </body>
 </html>
+
+
 
