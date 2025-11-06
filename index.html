@@ -6,13 +6,13 @@
   <title>Cyber Tips & Fields</title>
   <style>
     :root {
-      --bg1: #0a0711;
-      --bg2: #1a0f24;
-      --bg3: #2a1040;
+      --bg1: #09070d;
+      --bg2: #150d20;
+      --bg3: #241338;
       --card: #ffffff0a;
       --text: #ece7ff;
       --muted: #c0b8dacc;
-      --glow: #b689ff;
+      --glow: #caa3ff;
       --purple-light: #c69fff;
       --purple-dark: #4b2178;
     }
@@ -27,9 +27,9 @@
       margin: 0;
       padding: 24px;
       box-sizing: border-box;
-      background:
-        radial-gradient(900px 700px at 10% -10%, #3b1d66 0%, transparent 60%),
-        radial-gradient(900px 700px at 120% 120%, #511c8a 0%, transparent 55%),
+      background: 
+        radial-gradient(900px 700px at 15% -10%, #3a1a66 0%, transparent 60%),
+        radial-gradient(900px 700px at 120% 120%, #4a1a78 0%, transparent 55%),
         linear-gradient(160deg, var(--bg1), var(--bg2) 55%, var(--bg3));
       color: var(--text);
     }
@@ -87,13 +87,13 @@
     }
 
     .badge-tips {
-      background: linear-gradient(180deg, #5a1b94, #7c2bdb);
-      color: #f5e5ff;
-      box-shadow: 0 0 16px 2px #d6a1ff80, 0 2px 6px rgba(0, 0, 0, .4);
+      background: linear-gradient(180deg, #7b2cbf, #5a189a);
+      color: #f6e7ff;
+      box-shadow: 0 0 16px 2px #c48fff80, 0 2px 6px rgba(0, 0, 0, .4);
     }
 
     .badge-fields {
-      background: linear-gradient(180deg, #2a1040, #4b2178);
+      background: linear-gradient(180deg, #4b2178, #2a0f4f);
       color: #e0ccff;
       box-shadow: 0 0 16px 2px #b184ff80, 0 2px 6px rgba(0, 0, 0, .4);
     }
@@ -102,8 +102,8 @@
       margin-top: 40px;
       font-size: 14px;
       color: var(--purple-light);
-      opacity: 0.8;
-      text-shadow: 0 0 10px #b689ff80;
+      opacity: 0.9;
+      text-shadow: 0 0 12px #b689ff80;
       animation: glow 3s ease-in-out infinite alternate;
     }
 
@@ -127,7 +127,7 @@
     <div class="meta">يتجدد المحتوى تلقائيًا كل <strong>10 ثوانٍ</strong></div>
   </div>
 
-  <footer>Developed by <strong>Renad Alshibl</strong></footer>
+  <footer>Made with 💜 by <strong>Renad Alshibl</strong> © 2025</footer>
 
   <script>
     function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));}
@@ -135,7 +135,6 @@
     function fmt(s){return wrapLatin(escapeHTML(s));}
 
     const items = [
-      // 20 Awareness Tips
       {type:'tips',text:"استخدم كلمات مرور طويلة وفريدة لكل حساب."},
       {type:'tips',text:"فعّل التحقق بخطوتين لحماية حساباتك من الاختراق."},
       {type:'tips',text:"تأكد من أن عنوان الموقع يبدأ بـ https قبل إدخال بياناتك."},
@@ -157,7 +156,6 @@
       {type:'tips',text:"احذر من الرسائل التي تطلب تحديث بياناتك البنكية."},
       {type:'tips',text:"تذكر أن وعيك الأمني هو خط الدفاع الأول ضد أي تهديد."},
 
-      // 10 Cyber Fields
       {type:'fields',text:"🔐 Cybersecurity: حماية الأنظمة والمعلومات من التهديدات الرقمية."},
       {type:'fields',text:"🔐 SOC: فريق يراقب التهديدات ويستجيب للحوادث الأمنية."},
       {type:'fields',text:"🔐 GRC: إدارة الحوكمة والمخاطر والامتثال للمعايير."},
@@ -207,6 +205,7 @@
   </script>
 </body>
 </html>
+
 
 
 
