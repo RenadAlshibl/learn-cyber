@@ -5,53 +5,134 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cyber Tips & Fields</title>
   <style>
-    :root { 
-      --bg1:#08060b; --bg2:#130a22; --bg3:#210f3c; 
-      --card:#ffffff0f; --text:#e9f1ff; --muted:#c0c9dacc; --glow:#ffffffc9;
+    :root {
+      --bg1:#05030a;
+      --bg2:#120820;
+      --bg3:#1c0f32;
+      --card:#161022f0;
+      --border:#ffffff10;
+      --text:#f5f5ff;
+      --muted:#c0c9da99;
+      --accent:#ffc94a;
+      --accent-soft:#2b6cff;
     }
+
     body{
-      font-family:"Segoe UI",Tahoma,Arial,sans-serif; 
-      display:flex; align-items:center; justify-content:center; flex-direction:column;
-      min-height:100vh; margin:0; padding:24px; box-sizing:border-box;
-      background: radial-gradient(900px 700px at 20% -10%, #2a1455 0%, transparent 60%),
-                  radial-gradient(900px 700px at 110% 120%, #3b1b6a 0%, transparent 55%),
-                  linear-gradient(160deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+      font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:40px 24px 24px;
+      box-sizing:border-box;
+      background:
+        radial-gradient(900px 700px at 15% -10%, #2a1455 0%, transparent 60%),
+        radial-gradient(900px 700px at 100% 120%, #3b1b6a 0%, transparent 55%),
+        linear-gradient(160deg,var(--bg1),var(--bg2) 55%,var(--bg3));
       color:var(--text);
     }
-    .card{ width:min(880px,96%); background:var(--card); border:1px solid #ffffff14; border-radius:20px;
-      padding:40px 30px; backdrop-filter: blur(8px); text-align:center;
-      box-shadow:0 20px 50px rgba(0,0,0,.6), 0 0 80px 14px #7f49ff12 inset;
-    }
-    h1{ margin:0 0 8px 0; font-size:28px; letter-spacing:.5px; text-shadow:0 0 16px var(--glow), 0 0 26px #b1f1ff40; }
-    .meta{ font-size:13px; color:var(--muted); margin-top:14px; }
-    .fact{ font-size:22px; line-height:1.9; margin:18px 0 0; min-height:104px; opacity:1;
-      transition:opacity .55s ease, transform .55s ease; text-align:center; direction:rtl; unicode-bidi:plaintext; text-shadow:0 0 12px #ffffff1f; }
-    .fade-out{ opacity:0; transform:translateY(-6px); }
-    .badge{ display:inline-block; font-size:12px; padding:6px 12px; border-radius:999px; margin-bottom:12px; direction:ltr; border:1px solid #ffffff25; opacity:.96; }
-    .badge-tips{ background:linear-gradient(180deg,#0f2748,#173a66); color:#d8ecff; box-shadow:0 0 16px 2px #69d6ff66, 0 2px 6px rgba(0,0,0,.4); }
-    .badge-fields{ background:linear-gradient(180deg,#240d3e,#331657); color:#efd8ff; box-shadow:0 0 16px 2px #c28bff66, 0 2px 6px rgba(0,0,0,.4); }
 
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #cbb8ff;
-      opacity: 0.9;
-      text-shadow: 0 0 12px #b689ff60;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card{
+      width:min(920px, 96%);
+      padding:42px 40px 30px;
+      background:var(--card);
+      border-radius:26px;
+      border:1px solid var(--border);
+      box-shadow:
+        0 24px 60px rgba(0,0,0,.75),
+        0 0 40px rgba(0,0,0,.8) inset;
+      text-align:center;
+      backdrop-filter:blur(14px);
     }
 
-    @media(max-width:520px){ .card{padding:30px 18px} .fact{font-size:19px; min-height:92px} h1{font-size:24px} }
+    h1{
+      margin:0 0 16px 0;
+      font-size:32px;
+      font-weight:700;
+      color:#ffffff;
+      letter-spacing:.5px;
+      text-shadow:0 0 14px rgba(255,255,255,0.16);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      padding:7px 18px;
+      border-radius:999px;
+      font-size:12px;
+      background:rgba(9,16,32,0.96);
+      color:#e4efff;
+      border:1px solid rgba(255,255,255,0.09);
+      box-shadow:0 6px 14px rgba(0,0,0,0.55);
+    }
+
+    .badge span.icon{
+      font-size:13px;
+    }
+
+    .fact{
+      margin:0;
+      margin-top:8px;
+      font-size:22px;
+      line-height:1.9;
+      min-height:80px;
+      color:var(--text);
+      text-shadow:0 0 10px rgba(0,0,0,0.7);
+      transition:opacity .45s ease, transform .45s ease;
+    }
+
+    .fade-out{
+      opacity:0;
+      transform:translateY(-6px);
+    }
+
+    .meta{
+      margin-top:26px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:16px;
+      font-size:12px;
+      color:#cbb8ff;
+      text-align:center;
+      text-shadow:0 0 8px rgba(0,0,0,0.7);
+    }
+
+    footer strong{
+      font-weight:600;
+      color:#ffffff;
+    }
+
+    @media (max-width:600px){
+      .card{
+        padding:30px 18px 22px;
+        border-radius:20px;
+      }
+      h1{
+        font-size:24px;
+      }
+      .fact{
+        font-size:18px;
+        min-height:72px;
+      }
+      .meta, footer{
+        font-size:11px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card" role="main" aria-live="polite">
     <h1>Cyber Tips & Fields</h1>
-    <div id="badge" class="badge badge-tips">💡 Cyber Tips</div>
+    <div id="badge" class="badge">
+      <span class="icon">💡</span><span>Cyber Tips</span>
+    </div>
     <p id="fact" class="fact">Loading…</p>
     <div class="meta">يتجدد المحتوى تلقائيًا كل <strong>5 ثوانٍ</strong></div>
   </div>
@@ -59,10 +140,23 @@
   <footer>Developed by <strong>Renad Alshibl © 2025</strong></footer>
 
   <script>
-    function escapeHTML(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-    function wrapLatin(s){return s.replace(/([A-Za-z][A-Za-z0-9+\-./#\s]*[A-Za-z0-9])/g,'<bdi dir="ltr">$1</bdi>');}
-    function fmt(s){return wrapLatin(escapeHTML(s));}
-    function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    function escapeHTML(s){
+      return s.replace(/[&<>"']/g, m => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[m]));
+    }
+    function wrapLatin(s){
+      return s.replace(/([A-Za-z][A-Za-z0-9+\-./#\s]*[A-Za-z0-9])/g,
+        '<bdi dir="ltr">$1</bdi>');
+    }
+    function fmt(s){ return wrapLatin(escapeHTML(s)); }
+    function shuffle(a){
+      for(let i=a.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+      }
+      return a;
+    }
 
     const tipsData = [
       "استخدم كلمات مرور طويلة وفريدة لكل حساب",
@@ -103,10 +197,11 @@
     function buildPlaylist(){
       const t = shuffle(tipsData.slice());
       const f = shuffle(fieldsData.slice());
-      const out = []; let i=0, j=0;
+      const out = [];
+      let i=0, j=0;
       while(i<t.length || j<f.length){
-        for(let k=0;k<2 && i<t.length;k++) out.push({type:'tips',text:t[i++]});
-        if(j<f.length) out.push({type:'fields',text:f[j++]});
+        for(let k=0;k<2 && i<t.length;k++) out.push({type:'tips', text:t[i++]});
+        if(j<f.length) out.push({type:'fields', text:f[j++]});
       }
       return out;
     }
@@ -118,28 +213,40 @@
     const badgeEl = document.getElementById('badge');
 
     function render(item){
-      if(item.type==='tips'){ badgeEl.textContent='💡 Cyber Tips'; badgeEl.className='badge badge-tips'; }
-      else{ badgeEl.textContent='🔐 Cyber Fields'; badgeEl.className='badge badge-fields'; }
+      if(item.type === 'tips'){
+        badgeEl.className = 'badge';
+        badgeEl.innerHTML = '<span class="icon">💡</span><span>Cyber Tips</span>';
+      } else {
+        badgeEl.className = 'badge';
+        badgeEl.innerHTML = '<span class="icon">🔐</span><span>Cyber Fields</span>';
+      }
       factEl.innerHTML = fmt(item.text);
     }
 
     function nextItem(){
       ptr++;
-      if(ptr >= playlist.length){ playlist = buildPlaylist(); ptr = 0; }
+      if(ptr >= playlist.length){
+        playlist = buildPlaylist();
+        ptr = 0;
+      }
       return playlist[ptr];
     }
 
     function showNext(){
-      factEl.classList.add('fade-out'); badgeEl.classList.add('fade-out');
-      setTimeout(()=>{ render(nextItem()); factEl.classList.remove('fade-out'); badgeEl.classList.remove('fade-out'); }, 550);
+      factEl.classList.add('fade-out');
+      badgeEl.classList.add('fade-out');
+      setTimeout(() => {
+        render(nextItem());
+        factEl.classList.remove('fade-out');
+        badgeEl.classList.remove('fade-out');
+      }, 450);
     }
 
     render(nextItem());
-    setInterval(showNext, 5000); // ← التبديل كل 5 ثوانٍ
+    setInterval(showNext, 5000);
   </script>
 </body>
 </html>
-
 
 
 
